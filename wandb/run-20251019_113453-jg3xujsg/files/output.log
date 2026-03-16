@@ -1,0 +1,17 @@
+100%|██████████████| 5/5 [01:02<00:00, 12.44s/it]
+
+============================================================
+EVALUATION COMPLETE - ENTITY METRICS WORKING!
+============================================================
+eval_loss: 3.0473790168762207
+eval_model_preparation_time: 0.0082
+eval_rougeL: 0.2232
+eval_bertscore_f1: 0.8616
+eval_entity_retention: 0.0
+eval_entity_f1: 0
+eval_runtime: 39.449
+eval_samples_per_second: 0.253
+eval_steps_per_second: 0.127
+
+✗ ISSUE: Entity retention is still 0
+✗ ISSUE: Entity F1 is still 0

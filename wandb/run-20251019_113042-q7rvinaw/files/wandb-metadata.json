@@ -1,0 +1,24 @@
+{
+  "os": "Windows-11-10.0.26100-SP0",
+  "python": "CPython 3.13.5",
+  "startedAt": "2025-10-19T06:00:42.939556Z",
+  "program": "C:\\Users\\sandeepk\\genai_project\\2fine_tune.py",
+  "codePath": "genai_project\\2fine_tune.py",
+  "codePathLocal": "2fine_tune.py",
+  "email": "sendmailprotocol404@gmail.com",
+  "root": "C:\\Users\\sandeepk\\genai_project",
+  "host": "IT-32",
+  "executable": "C:\\Users\\sandeepk\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+  "cpu_count": 4,
+  "cpu_count_logical": 8,
+  "disk": {
+    "/": {
+      "total": "254855696384",
+      "used": "195295637504"
+    }
+  },
+  "memory": {
+    "total": "16897630208"
+  },
+  "writerId": "s30y7305jcrfrxdv6z333hitomkli8ay"
+}

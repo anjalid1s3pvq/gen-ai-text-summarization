@@ -1,0 +1,1 @@
+{"eval/rougeL":0.2273,"eval/entity_retention":15.52,"eval/steps_per_second":0.031,"_wandb":{"runtime":1637},"eval/bertscore_f1":0.8624,"_step":1,"_runtime":1637,"train/global_step":0,"eval/loss":12.163605690002441,"eval/runtime":1603.6678,"eval/samples_per_second":0.125,"eval/model_preparation_time":0,"_timestamp":1.7608699709406376e+09}
