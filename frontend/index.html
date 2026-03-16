@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medical Entity Summarizer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="app-shell">
+        <header>
+            <div class="logo">
+                <div class="logo-core"></div>
+                <span>NeonCare Summarizer</span>
+            </div>
+            <p>Entity-aware medical summaries powered by FLAN-T5 with LoRA.</p>
+        </header>
+
+        <main>
+            <section class="panel input-panel">
+                <div class="panel-header">
+                    <h2>Medical Text</h2>
+                    <span class="accent-pill">3D Neon UI</span>
+                </div>
+                <textarea id="input-text" placeholder="Paste medical notes, discharge summaries, or clinical reports here..."></textarea>
+
+                <div class="controls">
+                    <label>
+                        Max length
+                        <input type="number" id="max-length" value="200" min="64" max="512" />
+                    </label>
+                    <label>
+                        Temperature
+                        <input type="number" id="temperature" value="0.9" min="0.2" max="1.5" step="0.1" />
+                    </label>
+                    <button id="summarize-btn">Summarize</button>
+                </div>
+            </section>
+
+            <section class="panel output-panel">
+                <div class="panel-header">
+                    <h2>Summary</h2>
+                    <span id="status-chip" class="status-chip">Idle</span>
+                </div>
+                <div id="summary-output">No summary generated yet.</div>
+                <div class="meta">
+                    <div>
+                        <span>Tokens</span>
+                        <strong id="tokens-used">0</strong>
+                    </div>
+                    <div>
+                        <span>Latency</span>
+                        <strong id="latency">0.00s</strong>
+                    </div>
+                    <div>
+                        <span>Device</span>
+                        <strong id="device">-</strong>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel jobs-panel">
+                <div class="panel-header">
+                    <h2>Training & Evaluation</h2>
+                    <span>Automate fine-tuning and validation</span>
+                </div>
+                <div class="job-grid">
+                    <article class="job-card">
+                        <div class="job-header">
+                            <h3>Fine-tune Model</h3>
+                            <span id="train-status" class="status-chip">Idle</span>
+                        </div>
+                        <p>Runs `2fine_tune.py`, updates the LoRA adapters, and refreshes the live model.</p>
+                        <button id="train-btn" class="ghost-btn">Start Training</button>
+                        <div class="job-meta">
+                            <span id="train-message">No runs yet.</span>
+                            <pre id="train-logs">Logs will appear here once training starts.</pre>
+                        </div>
+                    </article>
+
+                    <article class="job-card">
+                        <div class="job-header">
+                            <h3>Evaluate Model</h3>
+                            <span id="eval-status" class="status-chip">Idle</span>
+                        </div>
+                        <p>Launches `3evaluate.py` to measure ROUGE, BERTScore, and entity retention.</p>
+                        <button id="eval-btn" class="ghost-btn">Start Evaluation</button>
+                        <div class="job-meta">
+                            <span id="eval-message">No runs yet.</span>
+                            <pre id="eval-logs">Logs will appear here once evaluation starts.</pre>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Backend: FastAPI · Model: Fine-tuned FLAN-T5 · Colors: black, neon green, emerald gradients.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js" integrity="sha512-VlJ/JV7Mn5dnlx3Q33mLb1CLHAK07Jw/RkBc/6vXRPGP3EgaS8DIrm2AgcBlv5V9dQevlDSEwjegRo0aQOHM9w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="app.js" type="module"></script>
+</body>
+</html>
+
